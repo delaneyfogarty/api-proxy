@@ -15,7 +15,7 @@ export default function YelpSearch() {
     // set the loading state to true
     // use fetch to make a request to your netlify yelp function. Be sure to pass the search query as a query param in the URL
     const response = await getYelpData(yelpQuery);
-
+    console.log(response);
     setIsLoading(false);
     setYelpData(response.data.businesses);
 
@@ -31,9 +31,9 @@ export default function YelpSearch() {
         <input value={yelpQuery} onChange={(e) => setYelpQuery(e.target.value)} />
         <button>Search yelp</button>
       </form>
-      <header className="yelp-list">
-        {isLoading ? <Spinner /> : <BusinessesList yelpData={yelpData} />}
-      </header>
+      {/* <header className="yelp-list"> */}
+      {isLoading ? <Spinner /> : <BusinessesList yelpData={yelpData} />}
+      {/* </header> */}
 
       {/* Make a BusinessesList component to import and use here. Use a ternery to display a loading spinner (make a <Spinner /> component for this) if the data is still loading. */}
     </section>

@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
     // here is an example from the netlify docs:
     // https://functions.netlify.com/playground/#hello%2C-%7Bname%7D
     const response = await fetch(
-      `https://api.yelp.com/v3/businesses/search?location=${event.queryStringParameters.searchFilter}`,
+      `https://api.yelp.com/v3/businesses/search?location=${event.queryStringParameters.location}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.YELP_KEY}`,
