@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function BusinessesList({ yelpData }) {
-  console.log(yelpData);
+  // console.log(yelpData);
   return (
     <div>
       {yelpData.map((business, i) => (
